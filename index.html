@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlobalNews | Local Intelligence Terminal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            intel: {
+              bg: 'var(--color-intel-bg)',
+              card: 'var(--color-intel-card)',
+              border: 'var(--color-intel-border)',
+              accent: '#3b82f6',
+              secondary: '#64748b',
+              success: '#10b981',
+              warning: '#f59e0b',
+              danger: '#ef4444',
+              muted: '#94a3b8'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --color-intel-bg: #f8fafc;
+      --color-intel-card: #ffffff;
+      --color-intel-border: #e2e8f0;
+      --color-text-primary: #0f172a;
+      --color-text-secondary: #64748b;
+      --scrollbar-thumb: #cbd5e1;
+      --color-search-bg: rgba(241, 245, 249, 0.5);
+      /* Light translucent */
+    }
+
+    .dark {
+      --color-intel-bg: #0f1115;
+      /* Lighter grayish black */
+      --color-intel-card: #15181e;
+      --color-intel-border: rgba(59, 130, 246, 0.12);
+      /* Slightly more visible border */
+      --color-text-primary: #f1f5f9;
+      --color-text-secondary: #94a3b8;
+      /* Increased contrast for secondary text */
+      --scrollbar-thumb: #1e293b;
+      --color-search-bg: rgba(15, 23, 42, 0.6);
+      /* Dark translucent */
+    }
+
+    body {
+      background-color: var(--color-intel-bg);
+      color: var(--color-text-primary);
+      transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-x: hidden;
+    }
+
+    /* Override for standard Tailwind text colors in dark mode */
+    .dark .text-white {
+      color: #ffffff;
+    }
+
+    .dark .text-zinc-300 {
+      color: #d4d4d8;
+    }
+
+    .dark .text-zinc-400 {
+      color: #a1a1aa;
+    }
+
+    .dark .text-zinc-500 {
+      color: #71717a;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 10px;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .animate-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 40s linear infinite;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "recharts": "https://esm.sh/recharts@^3.6.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

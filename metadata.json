@@ -1,0 +1,5 @@
+{
+  "name": "GlobalNews Console",
+  "description": "An off-grid geopolitical intelligence platform running strictly on local hardware and backend services.",
+  "requestFramePermissions": []
+}
